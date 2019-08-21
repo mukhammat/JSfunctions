@@ -10,33 +10,30 @@
 <body>
 <script>
 
-let splitString = (stringToSplit, separator) => {
-  var arrayOfStrings = stringToSplit.split(separator);
-  return arrayOfStrings
+class Book
+{
+    constructor(title,price) {
+        this.title = title;
+        this.price = price;
+    }
+
+    show ()
+    {
+        document.write('Названия книги: ' + this.title + '\t Цена: ' + this.price + ' ');
+    }
+
+    edit ( modern_title = this.title, modern_price = this.price )
+    {
+        this.title = modern_title;
+        this.price = modern_price;
+    }
 }
 
-const bubbleSort = arr => {
-    for (let i = 0, endI = arr.length - 1; i < endI; i++) {
-        let wasSwap = false;
-        for (let j = 0, endJ = endI - i; j < endJ; j++) {
-            if (arr[j] > arr[j + 1]) {
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-                wasSwap = true;
-            }
-        }
-        if (!wasSwap) break;
-    }
-    return arr;
-};
+let user = new Book("Програмиирования",1000);
+user.show();
 
-let arr = prompt('Введите числа?', 1);
-
-arr = splitString(arr, ' ');
-
-//arr.sort(compareNumeric);
-bubbleSort(arr);
-
-alert(arr);
+user.edit('GH', 200);
+user.show();
 
 </script>
     
