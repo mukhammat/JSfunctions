@@ -18,22 +18,3 @@ function deepCopyObject(obj) {
     }
     return newObject;
 }
-
-function soDeepCopyObject(obj) {
-    let newObject = {};
-    let vr = 'key';
-    let i = 1;
-    while(true) {
-        vr += `${i}`;
-        for(let key in obj) {
-            if(typeof(obj[key]) === 'object') {
-                newObject[key] = copyObject(obj[key]);
-            }
-            else {
-                newObject[key] = obj[key];
-            }
-        }
-        break;
-    }
-    return newObject;
-}
